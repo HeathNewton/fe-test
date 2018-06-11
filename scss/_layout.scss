@@ -19,10 +19,16 @@
 	padding: 0 remCalc(12);
 }
 
+@media screen and (min-width: $main-bp) {
+	.gallery__static {
+		padding: 0;
+	}
+}
+
 .main-gallery {
 	padding-bottom: remCalc(60);
 	@media screen and (min-width: $main-bp) {
-		padding-bottom: remCalc(90);
+		padding: 0 remCalc(12) remCalc(90);
 	}
 }
 
