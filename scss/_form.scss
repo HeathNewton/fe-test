@@ -65,35 +65,16 @@ input, select {
 	    width: remCalc(13);
 	    height: remCalc(13);
 	    position: absolute;
+	    z-index: 2;
 	    right: remCalc(19);
 	   	top: 50%;
 	   	transform: translate(0,-50%);
 	}
-  //   pointer-events: none;
-  // }
-  // .svg-icon {
-  //   position: absolute;
-  //   z-index: 21;
-  //   right: 0;
-  //   top: 0;
-  //   @include rhythm(height, 7, $offset: 2); // = 40px
-  //   @include rhythm(width, 8, $offset: 2); // = 46px
-  //   background-color: $grey-tint-lighterer;
-  //   border-left: 1px solid $grey-tint-light;
-  //   pointer-events: none;
-  //   svg {
-  //     @include rem-fallback(width,14px);
-  //     @include rem-fallback(height,14px);
-  //     position: absolute;
-  //     //z-index: 21;
-  //     @include rem-fallback(right,15px);
-  //     @include rem-fallback(top,14px);
-  //     pointer-events: none;
-  //   }
-  // }	
 	select {
 		@include form-element(true);
 		background-color: transparent; // removes useragent styles in some browsers
+		position: relative;
+		z-index: 1;
 		// removes default select styling
 		-webkit-appearance: none; // Safari/Chrome but for the Safari styles 
 		-moz-appearance: none; // Firefox
