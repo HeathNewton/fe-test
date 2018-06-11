@@ -1,0 +1,21 @@
+.gallery img {
+	border-radius: 5px;
+	max-width: 100%;
+	display: block;
+}
+
+.image__block {
+	@media screen and (min-width: $gallery-bp) {
+		width: remCalc(370);
+	}
+}
+
+.image__block--text {
+	margin-top: remCalc(12);
+	.h4 {
+		margin-bottom: remCalc(3);
+	}
+	p {
+		margin-bottom: remCalc(12);
+	}
+}

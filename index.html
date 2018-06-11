@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+    // Add this class to prevent flashes of js manipulated content,
+    // this class is removed later once document has loaded in ecommerce.js
+    // Elements with this class are hidden in CSS.
+    document.getElementsByTagName('html')[0].className += 'js-temp-hide ';
+</script>
+<title>A front-end test of sorts</title>
+<link rel="stylesheet" href="css/main.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/libraries/jquery/1.10.2/jquery.min.js"><\/script>')</script>
+</head>
+<body>
+<header class="header">
+	<h1>A front-end test of sorts</h1>
+</header>
+<main class="main">
+	<div class="main-inner">
+		<form class="form" action="#">
+			<div class="form-inner">
+				<h2 class="legend">Form title</h2>
+				<div class="form__grid">
+					<div class="form__item--text">
+						<input name="first-name" id="first-name" class="form__input" type="text">
+						<label class="show-init" for="first-name">First name</label>
+					</div>
+					<div class="form__item--text">
+						<input name="last-name" id="last-name" class="form__input" type="text">
+						<label class="show-init" for="last-name">Last name</label>
+					</div>
+					<div class="form__item--text">
+						<input name="email-address" id="email-address" class="form__input" type="email">
+						<label class="show-init" for="email-address">Email address</label>
+					</div>
+					<div class="form__item--select">
+						<span class="svg-icon svg-icon-arrow-down">
+							<svg>
+								<use xlink:href="/images/icons/sprite.svg#arrow-down"></use>
+							</svg>
+						</span>
+						<select name="city" id="city" class="form__select">
+							<option value=""></option>
+							<option value="Auckland">Auckland</option>
+							<option value="Hamilton">Hamilton</option>
+							<option value="Wellington">Wellington</option>
+							<option value="Christchurch">Christchurch</option>
+							<option value="Dunedin">Dunedin</option>
+						</select>
+						<label class="show-init" for="city">City</label>
+					</div>
+				</div>
+			</div>
+			<div class="form__action">
+				<button type="submit" class="button">Submit</button>
+			</div>
+		</form>
+		<hr>
+	</div>
+	<div class="main-gallery">
+		<section class="gallery">
+			<div class="gallery__static">
+				<div class="image__block">
+					<img src="/images/image-01.png" alt="">
+					<div class="image__block--text">
+						<h2 class="h4">Pink & Purple Sunset</h2>
+						<p>Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper.</p>
+						<a href="#">Go to the sunset</a>
+					</div>
+				</div>
+				<div class="image__block">
+					<img src="/images/image-02.png" alt="">
+					<div class="image__block--text">
+						<h2 class="h4">Sublime Trees</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet&hellip;</p>
+						<a href="#">View some more</a>
+					</div>
+				</div>
+			</div>
+			<div class="gallery__scroll">
+				<ul class="nobullets">
+					<li><a href="#"><img src="/images/image-03.png" alt=""></a></li>
+					<li><a href="#"><img src="/images/image-04.png" alt=""></a></li>
+					<li><a href="#"><img src="/images/image-05.png" alt=""></a></li>
+					<li><a href="#"><img src="//placekitten.com/236/174" alt=""></a></li>
+					<li><a href="#"><img src="//placekitten.com/g/236/174" alt=""></a></li>
+				</ul>
+			</div>
+		</section>
+	</div>
+</main>
+
+<footer class="footer">
+	<div class="footer__inner">
+		<div class="footer__col">
+			<div class="footer__address">
+				<h2 class="h4">Main Office</h2>
+				<p>6235 Thalia Terrace Apt. 695<br>Frederikfurt<br>Jamaica</p>
+			</div>
+			<div class="footer__contact">
+				<h2 class="h4">Contact</h2>
+				<ul class="nobullets">
+					<li>735-421-6378</li>
+					<li><a href="mailto:myname@gmail.com">myname@gmail.com</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer__col">
+			<ul class="footer__social-icons nobullets nobm">
+				<li class="social-icons__facebook">
+					<a target="_blank" rel="noopener noreferrer" href="https://facebook.com">
+						<div class="svg-icon svg-icon-facebook">
+							<svg>
+								<title>Facebook</title>
+								<use xlink:href="/images/icons/sprite.svg#facebook"></use>
+							</svg>
+						</div>
+					</a>
+				</li>
+				<li class="social-icons__instagram">
+					<a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com">
+						<div class="svg-icon svg-icon-instagram">
+							<svg>
+								<title>Instagram feed</title>
+								<use xlink:href="/images/icons/sprite.svg#instagram"></use>
+							</svg>
+						</div>
+					</a>
+				</li>
+				<li class="social-icons__youtube">
+					<a target="_blank" rel="noopener noreferrer" href="https://youtube.com">
+						<div class="svg-icon svg-icon-youtube">
+							<svg>
+								<title>Youtube</title>
+								<use xlink:href="/images/icons/sprite.svg#youtube"></use>
+							</svg>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<div class="footer__blurb">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</div>
+		</div>
+	</div>
+ </footer>
+</body>
+<script src="js/main.js"></script>
+<script defer="defer" src="/js/libraries/svgxuse/1.1.16/svgxuse.min.js"></script>
+</html>

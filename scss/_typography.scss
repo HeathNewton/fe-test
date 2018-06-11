@@ -1,0 +1,51 @@
+h1,h2,h3,h4,h5,h6 {
+	color: $black;
+}
+
+h1 {
+  @include rhythm(24,10);
+  text-align: center;
+  margin: 0;
+}
+
+h2 {
+	@include rhythm(18,8);
+	margin: 0 0 remCalc(24);
+}
+
+.h4 {
+	@include rhythm(14,6);
+	color: $grey;
+	margin-bottom: 0;
+}
+
+// zero spacing for paragraphs and lists.
+p,
+ul {
+	margin: 0;
+}
+
+.nobullets {
+	list-style: none;
+	padding: 0;
+}
+
+a {
+	color: $blue;
+	text-decoration: none;
+	&:hover,
+	&:focus {
+		color: $grey;
+	}
+	.footer__social-icons & {
+		display: block;
+		&:hover,
+		&:focus {
+			color: white;
+			svg {
+				color: white;
+				fill: $blue;
+			}
+		}
+	}
+}

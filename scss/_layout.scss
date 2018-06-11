@@ -1,0 +1,220 @@
+.header {
+	padding: remCalc(42) remCalc(12);
+	@media screen and (min-width: $main-bp) {
+		padding-top: remCalc(60);
+		padding-bottom: remCalc(60);
+	}
+}
+
+.main-inner,
+.footer__inner,
+.gallery__static,
+.gallery__scroll {
+	max-width: remCalc(794);
+	margin: 0 auto;
+}
+
+.main-inner,
+.gallery__static {
+	padding: 0 remCalc(12);
+}
+
+.main-gallery {
+	padding-bottom: remCalc(60);
+	@media screen and (min-width: $main-bp) {
+		padding-bottom: remCalc(90);
+	}
+}
+
+.form {
+	margin-bottom: remCalc(41);
+	@media screen and (min-width: $main-bp) {
+		margin-bottom: remCalc(59);
+	}
+}
+
+// non-grid browsers
+.form__grid {
+	> div {
+		width: 100%;
+		margin: 0 auto;
+		&.form__item--text {
+			margin-bottom: remCalc(21);
+		}
+	}
+	@media screen and (min-width: $main-bp) {
+		@include clearfix;
+		> div {
+			width: remCalc(370);
+			float: left;
+			&:nth-last-child(-n+2) {
+				margin-bottom: 0;
+			}
+			&:nth-child(odd) {
+				margin-right: remCalc(30);
+			}
+		}
+	}
+}
+// grid browsers
+@supports (display: grid) {
+	@media screen and (min-width: $main-bp) {
+		.form__grid {
+			@include no-clearfix;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(remCalc(370),1fr));
+			grid-column-gap: remCalc(30);
+			grid-row-gap: remCalc(21);
+			> div.form__item--text,
+			> div.form__item--select {
+				width: auto;
+				margin: 0;
+			}
+		}
+	}
+}
+
+.gallery {
+	padding-top: remCalc(41);
+	@media screen and (min-width: $main-bp) {
+		padding-top: remCalc(59);
+	}
+}
+
+.gallery__static {
+	margin-bottom: remCalc(30);
+	> div {
+		margin: 0 auto;
+		&:first-child {
+			margin-bottom: remCalc(21);
+		}
+	}
+	@media screen and (min-width: $main-bp) {
+		@include clearfix;
+		margin-bottom: 0;
+		> div:first-child {
+			float: left;
+		}
+		> div:last-child {
+			float: right;
+		}
+	}
+}
+
+@supports (display: flex) {
+	@media screen and (min-width: $main-bp) {
+		.gallery__static {
+			@include no-clearfix;
+			display: flex;
+			justify-content: space-between;
+			> div {
+				margin: 0;
+			}
+		}
+	}
+}
+
+$img-no: 5;
+$img-width: 236;
+// in px because raster images
+.gallery__scroll {
+	width: auto;
+	overflow: scroll;
+	-ms-overflow-style: -ms-autohiding-scrollbar; // IE/Edge!
+	height: 174px;
+	> ul {
+		@include clearfix;
+		width: ($img-no * ($img-width + 10)) * 1px;
+		> li {
+			float: left;
+			width: $img-width * 1px;
+			margin-right: 10px;
+			> a {
+				display: block;
+			}
+		}
+	}
+}
+
+.footer {
+	border-top: remCalc(1) solid $blue-grey;
+	background-color: $light-grey;
+}
+
+.footer__inner {
+	padding: remCalc(59) remCalc(12) remCalc(60);
+	@media screen and (min-width: $main-bp) {
+		padding: remCalc(89) remCalc(12) remCalc(90);
+	}
+	text-align: center;
+	div:not(:first-child) {
+		margin-top: remCalc(30);
+	}
+	@media screen and (min-width: $footer-bp) {
+		@include clearfix;
+		text-align: left;
+		.footer__col {
+			float: left;
+			width: remCalc(370);
+			&:not(:first-child) {
+				margin-top: 0;
+			}
+			&:first-child {
+				float: right;
+				width: remCalc(270);
+			}
+		}
+	}
+}
+
+@supports (display: flex) {
+	@media screen and (min-width: $footer-bp) {
+		.footer__inner {
+			@include no-clearfix;
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: space-between;
+			.footer__col {
+				width: auto;
+				max-width: remCalc(370);
+				flex: 1 0 auto;
+				&:first-child {
+					float: right;
+					width: auto;
+					max-width: auto;
+					flex: 0 0 remCalc(270);
+					margin-left: remCalc(30);
+				}
+			}
+		}
+	}
+}
+
+.footer__social-icons {
+	@include clearfix;
+	li {
+		display: inline-block;
+		text-align: center;
+		&:not(:first-child) {
+			margin-left: remCalc(14);
+		}
+	}
+}
+
+@supports (display: grid) {
+	.footer__social-icons {
+		@include no-clearfix;
+		display: grid;
+		grid-template-columns: repeat(3, remCalc(39));
+		grid-column-gap: remCalc(14);
+		justify-content: center;
+		li:not(:first-child) {
+			margin-left: 0;
+		}
+	}
+	@media screen and (min-width: $footer-bp) {
+		.footer__social-icons {
+			justify-content: start;
+		}
+	}
+}

@@ -1,0 +1,68 @@
+@function remCalc($value) {
+    @return ($value/$base-font-size) * 1rem;
+}
+
+@mixin font-size($value: $base-font-size) {
+    font-size: remCalc($value);
+}
+
+@mixin rhythm($font-value, $lh-value: 1) {
+    @include font-size($font-value);
+    line-height: (($lh-value * $base-line-height) / $font-value);
+}
+
+@mixin clearfix() {
+  &:before, &:after { content: " "; display: table; }
+  &:after { clear: both; }
+}
+
+@mixin no-clearfix() {
+  &:before, &:after { content: none;}
+}
+
+@mixin form-border {
+	border: remCalc(1) solid $blue-grey;
+	border-radius: remCalc(5);
+	background-color: white;
+	position: relative;
+	&.focus {
+		border-color: $blue;
+	}
+}
+
+@mixin form-element($is-select: false) {
+	border: remCalc(1) solid transparent;
+	border-radius: remCalc(5);
+	display: block;
+	width: 100%;
+	font-family: Ariel, sans-serif;
+	color: $blue;
+	@include rhythm(14,6);
+	@if $is-select {
+		padding: remCalc(13) remCalc(49) remCalc(13) remCalc(18);
+	}
+	@else {
+		padding: remCalc(13) remCalc(18);
+	}
+}
+
+@mixin form-label {
+	display: inline-block;
+	@include rhythm(14,6);
+	position: absolute;
+	left: remCalc(19);
+   	top: 50%;
+   	transform: translate(0,-50%);
+}
+
+@mixin visuallyhidden() {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;  
+}

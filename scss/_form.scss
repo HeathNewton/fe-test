@@ -1,0 +1,146 @@
+.js-temp-hide .form {
+	visibility: hidden;
+}
+
+.legend {
+	@include rhythm(14,6);
+	font-weight: normal;
+	color: $grey;
+	text-align: center;
+	margin-bottom: remCalc(18);
+	@media screen and (min-width: $main-bp) {
+		margin-bottom: remCalc(30);
+	}
+}
+
+input, select {
+	border: none;
+}
+
+.form__item--text {
+	@include form-border;
+	input {
+		@include form-element;
+		&:focus {
+			outline: none;
+		}
+		&:focus,
+		&.show {
+			padding-right: remCalc(125);
+		}
+	}
+	label {
+		@include form-label;
+		// top: remCalc(14);
+		transition: all 0.1s linear;
+	}
+	input:focus,
+	input.show,
+	input[value] {
+		padding-top: remCalc(20);
+		padding-bottom: remCalc(6);
+		@media screen and (min-width: $form-bp) {
+			padding-top: remCalc(13);
+			padding-bottom: remCalc(13);
+		}
+	}
+	input:focus + label,
+	input + label.show,
+	input[value] + label.show-init {
+		@include rhythm(11,4);
+		top: remCalc(14);
+		@media screen and (min-width: $form-bp) {
+			left: auto;
+			top: 50%;
+			right: remCalc(19);
+		}
+	}
+}
+
+.form__item--select {
+	@include form-border;
+	width: 100%;
+	overflow: hidden;
+  	.svg-icon {
+	    width: remCalc(13);
+	    height: remCalc(13);
+	    position: absolute;
+	    right: remCalc(19);
+	   	top: 50%;
+	   	transform: translate(0,-50%);
+	}
+  //   pointer-events: none;
+  // }
+  // .svg-icon {
+  //   position: absolute;
+  //   z-index: 21;
+  //   right: 0;
+  //   top: 0;
+  //   @include rhythm(height, 7, $offset: 2); // = 40px
+  //   @include rhythm(width, 8, $offset: 2); // = 46px
+  //   background-color: $grey-tint-lighterer;
+  //   border-left: 1px solid $grey-tint-light;
+  //   pointer-events: none;
+  //   svg {
+  //     @include rem-fallback(width,14px);
+  //     @include rem-fallback(height,14px);
+  //     position: absolute;
+  //     //z-index: 21;
+  //     @include rem-fallback(right,15px);
+  //     @include rem-fallback(top,14px);
+  //     pointer-events: none;
+  //   }
+  // }	
+	select {
+		@include form-element(true);
+		background-color: transparent; // removes useragent styles in some browsers
+		// removes default select styling
+		-webkit-appearance: none; // Safari/Chrome but for the Safari styles 
+		-moz-appearance: none; // Firefox
+		appearance: none;
+		&::-ms-expand {
+		display: none; // IE10
+		}
+		// removes outline on focus
+		&:focus { // not sure if this works!
+		outline: none;
+		}
+		// This does, though
+		color: $grey;
+		color: rgba(0,0,0,0);
+		text-shadow: 0 0 0 $grey;
+		&.show + label {
+			@include visuallyhidden;
+		}
+	}
+	label {
+		@include form-label;
+	}
+}
+
+@supports (pointer-events: none) {
+	.form__item--select .svg-icon {
+		pointer-events: none;
+	}
+}
+
+.form__action {
+	margin-top: remCalc(21);
+	text-align: center;
+}
+
+.button {
+	border: remCalc(1) solid $dark-green;
+	border-radius: remCalc(5);
+	background-color: $green;
+	color: white;
+	@include rhythm(14,6);
+	font-weight: bold;
+	padding: remCalc(15) 0;
+	width: remCalc(270);
+	cursor: pointer;
+	&:hover,
+	&:focus {
+		background-color: $dark-green;
+	}
+}

@@ -1,0 +1,30 @@
+span.svg-icon {
+	display: inline-block;
+	position: relative;
+	width: 1em;
+	height: 1em;
+	bottom: -0.15em;
+	position: absolute;
+}
+
+@supports (display: flex) {
+	span.svg-icon {
+		display: inline-flex;
+		align-self: center;
+	}
+}
+
+.svg-icon {
+	color: inherit;
+	svg {
+		width: 100%;
+		height: 100%;
+		fill: white;
+		color: inherit;
+	}
+}
+
+.footer__social-icons .svg-icon {
+	width: remCalc(39);
+	height: remCalc(39);
+}
